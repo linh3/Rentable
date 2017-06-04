@@ -16,6 +16,6 @@ class DataAccess {
         return this.mongooseInstance;
     }
 }
-DataAccess.DB_CONNECTION_STRING = 'mongodb://adminRentable:adminRentable@localhost:27017/rentabledb';
+DataAccess.DB_CONNECTION_STRING = 'mongodb://rentable:rentable1@ds028540.mlab.com:28540/rentabledb';
 DataAccess.connect();
 exports.default = DataAccess;
