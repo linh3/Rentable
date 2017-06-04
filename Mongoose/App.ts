@@ -68,7 +68,7 @@ class App {
         if(!req.isAuthenticated()){
         console.log("shit");
         //return next();
-        res.redirect('/index.html');
+        res.redirect('../index.html');
         }
   }
   // Configure API endpoints.
@@ -148,7 +148,7 @@ class App {
         this.Tasks.retrieveTasksDetails(res, {listId: id});
     });
 */
-   router.get('/Search/:SearchKey/:SearchLocation',(req, res) => {
+   router.get('/Search/:SearchKey/:SearchLocation', (req, res) => {
         var key = req.params.SearchKey;
         var key2 = req.params.SearchLocation;
         console.log('1234123412341Query All list: ' + key);

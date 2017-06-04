@@ -45,7 +45,7 @@ class App {
         if (!req.isAuthenticated()) {
             console.log("shit");
             //return next();
-            res.redirect('/index.html');
+            res.redirect('../index.html');
         }
     }
     // Configure API endpoints.
