@@ -1,21 +1,22 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const Mongoose = require("mongoose");
-class DataAccess {
-    constructor() {
+exports.__esModule = true;
+var Mongoose = require("mongoose");
+var DataAccess = (function () {
+    function DataAccess() {
         DataAccess.connect();
     }
-    static connect() {
+    DataAccess.connect = function () {
         if (this.mongooseInstance)
             return this.mongooseInstance;
         this.mongooseConnection = Mongoose.connection;
-        this.mongooseConnection.on("open", () => {
+        this.mongooseConnection.on("open", function () {
             console.log("Connected to mongodb.");
         });
         this.mongooseInstance = Mongoose.connect(this.DB_CONNECTION_STRING);
         return this.mongooseInstance;
-    }
-}
+    };
+    return DataAccess;
+}());
 DataAccess.DB_CONNECTION_STRING = 'mongodb://adminRentable:adminRentable@localhost:27017/rentabledb';
 DataAccess.connect();
-exports.default = DataAccess;
+exports["default"] = DataAccess;
