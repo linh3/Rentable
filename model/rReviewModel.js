@@ -1,25 +1,26 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const DataAccess_1 = require("../DataAccess");
-var mongoose = DataAccess_1.default.mongooseInstance;
-var mongooseConnection = DataAccess_1.default.mongooseConnection;
-class rReviewModel {
-    constructor() {
+exports.__esModule = true;
+var DataAccess_1 = require("../DataAccess");
+var mongoose = DataAccess_1["default"].mongooseInstance;
+var mongooseConnection = DataAccess_1["default"].mongooseConnection;
+var rReviewModel = (function () {
+    function rReviewModel() {
         this.createSchema();
         this.createModel();
     }
-    createSchema() {
+    rReviewModel.prototype.createSchema = function () {
         this.schema = mongoose.Schema({
             reviewID: Number,
             itemID: Number,
             renterID: Number,
             lenderID: Number,
             comment: String,
-            star: Number,
+            star: Number
         }, { collection: 'rreview' });
-    }
-    createModel() {
+    };
+    rReviewModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("rreview", this.schema);
-    }
-}
-exports.default = rReviewModel;
+    };
+    return rReviewModel;
+}());
+exports["default"] = rReviewModel;

@@ -1,24 +1,25 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const DataAccess_1 = require("../DataAccess");
-var mongoose = DataAccess_1.default.mongooseInstance;
-var mongooseConnection = DataAccess_1.default.mongooseConnection;
-class rUserModel {
-    constructor() {
+exports.__esModule = true;
+var DataAccess_1 = require("../DataAccess");
+var mongoose = DataAccess_1["default"].mongooseInstance;
+var mongooseConnection = DataAccess_1["default"].mongooseConnection;
+var rUserModel = (function () {
+    function rUserModel() {
         this.createSchema();
         this.createModel();
     }
-    createSchema() {
+    rUserModel.prototype.createSchema = function () {
         this.schema = mongoose.Schema({
             userID: Number,
             fName: String,
             lName: String,
             email: String,
-            password: String,
+            password: String
         }, { collection: 'ruser' });
-    }
-    createModel() {
+    };
+    rUserModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("ruser", this.schema);
-    }
-}
-exports.default = rUserModel;
+    };
+    return rUserModel;
+}());
+exports["default"] = rUserModel;

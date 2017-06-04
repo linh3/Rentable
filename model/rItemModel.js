@@ -1,14 +1,14 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const DataAccess_1 = require("../DataAccess");
-var mongoose = DataAccess_1.default.mongooseInstance;
-var mongooseConnection = DataAccess_1.default.mongooseConnection;
-class rItemModel {
-    constructor() {
+exports.__esModule = true;
+var DataAccess_1 = require("../DataAccess");
+var mongoose = DataAccess_1["default"].mongooseInstance;
+var mongooseConnection = DataAccess_1["default"].mongooseConnection;
+var rItemModel = (function () {
+    function rItemModel() {
         this.createSchema();
         this.createModel();
     }
-    createSchema() {
+    rItemModel.prototype.createSchema = function () {
         this.schema = mongoose.Schema({
             //itemID: Number,
             //userID: Number,
@@ -19,17 +19,18 @@ class rItemModel {
             condition: Number,
             description: String,
             image: String,
-            location: String,
+            location: String
         }, { collection: 'ritem' });
-    }
-    createModel() {
+    };
+    rItemModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("rritem", this.schema);
-    }
-    retrieveItemWithKeyword(response, filter) {
+    };
+    rItemModel.prototype.retrieveItemWithKeyword = function (response, filter) {
         var query = this.model.find(filter);
-        query.exec((err, itemArray) => {
+        query.exec(function (err, itemArray) {
             response.json(itemArray);
         });
-    }
-}
-exports.default = rItemModel;
+    };
+    return rItemModel;
+}());
+exports["default"] = rItemModel;

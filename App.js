@@ -1,45 +1,45 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const path = require("path");
-const express = require("express");
-const logger = require("morgan");
-const bodyParser = require("body-parser");
-const session = require("express-session");
-const rUserModel_1 = require("./model/rUserModel");
-const rItemModel_1 = require("./model/rItemModel");
-const rCardModel_1 = require("./model/rCardModel");
-const rReviewModel_1 = require("./model/rReviewModel");
-const rTransactionModel_1 = require("./model/rTransactionModel");
-const GooglePassport_1 = require("./GooglePassport");
+exports.__esModule = true;
+var path = require("path");
+var express = require("express");
+var logger = require("morgan");
+var bodyParser = require("body-parser");
+var session = require("express-session");
+var rUserModel_1 = require("./model/rUserModel");
+var rItemModel_1 = require("./model/rItemModel");
+var rCardModel_1 = require("./model/rCardModel");
+var rReviewModel_1 = require("./model/rReviewModel");
+var rTransactionModel_1 = require("./model/rTransactionModel");
+var GooglePassport_1 = require("./GooglePassport");
 //import FacebookPassportObj from './FacebookPassport';
-let passport = require('passport');
+var passport = require('passport');
 // Creates and configures an ExpressJS web server.
-class App {
+var App = (function () {
     //public facebookPassportObj:FacebookPassportObj
     //Run configuration methods on the Express instance.
-    constructor() {
+    function App() {
         //this.facebookPassportObj = new FacebookPassportObj();
-        this.googlePassportObj = new GooglePassport_1.default();
+        this.googlePassportObj = new GooglePassport_1["default"]();
         this.express = express();
         this.middleware();
         this.routes();
         this.idGenerator = 100;
-        this.Users = new rUserModel_1.default();
-        this.Items = new rItemModel_1.default();
-        this.Cards = new rCardModel_1.default();
-        this.Reviews = new rReviewModel_1.default();
-        this.Transactions = new rTransactionModel_1.default();
+        this.Users = new rUserModel_1["default"]();
+        this.Items = new rItemModel_1["default"]();
+        this.Cards = new rCardModel_1["default"]();
+        this.Reviews = new rReviewModel_1["default"]();
+        this.Transactions = new rTransactionModel_1["default"]();
     }
     // Configure Express middleware.
-    middleware() {
+    App.prototype.middleware = function () {
         this.express.use(logger('dev'));
         this.express.use(bodyParser.json());
         this.express.use(bodyParser.urlencoded({ extended: false }));
         this.express.use(session({ secret: 'keyboard cat' }));
         this.express.use(passport.initialize());
         this.express.use(passport.session());
-    }
-    validateAuth(req, res, next) {
+    };
+    App.prototype.validateAuth = function (req, res, next) {
         //if (req.isAuthenticated()) { return next(); }
         //res.redirect('/');
         if (!req.isAuthenticated()) {
@@ -47,10 +47,11 @@ class App {
             //return next();
             res.redirect('../index.html');
         }
-    }
+    };
     // Configure API endpoints.
-    routes() {
-        let router = express.Router();
+    App.prototype.routes = function () {
+        var _this = this;
+        var router = express.Router();
         router.get('/auth/google', passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login', 'email'] }));
         router.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/list', failureRedirect: '/'
         }));
@@ -68,37 +69,37 @@ class App {
             );
         
         */
-        router.use((req, res, next) => {
+        router.use(function (req, res, next) {
             res.header("Access-Control-Allow-Origin", "*");
             res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             next();
         });
         var bodyParser = require('body-parser');
-        router.post('/CreateAccount/Create', this.validateAuth, (req, res) => {
+        router.post('/CreateAccount/Create', this.validateAuth, function (req, res) {
             console.log("here3");
             res.sendFile(path.join(__dirname + '/index.html'));
             console.log(req.body);
             var jsonObj = req.body;
-            jsonObj.userID = this.idGenerator;
-            this.Users.model.create([jsonObj], (err) => {
+            jsonObj.userID = _this.idGenerator;
+            _this.Users.model.create([jsonObj], function (err) {
                 if (err) {
                     console.log('object creation failed');
                 }
             });
-            res.send(this.idGenerator.toString());
-            this.idGenerator++;
+            res.send(_this.idGenerator.toString());
+            _this.idGenerator++;
         });
-        router.post('/PostItem/Post', this.validateAuth, (req, res) => {
+        router.post('/PostItem/Post', this.validateAuth, function (req, res) {
             console.log("here444");
             res.sendFile(path.join(__dirname + '/index.html'));
             console.log(req.body);
             var jsonObj = req.body;
-            this.Items.model.create([jsonObj], (err) => {
+            _this.Items.model.create([jsonObj], function (err) {
                 if (err) {
                     console.log('object creation failed');
                 }
             });
-            res.send(this.idGenerator.toString());
+            res.send(_this.idGenerator.toString());
             //        this.idGenerator++;
         });
         /*
@@ -108,16 +109,17 @@ class App {
                 this.Tasks.retrieveTasksDetails(res, {listId: id});
             });
         */
-        router.get('/Search/:SearchKey/:SearchLocation', (req, res) => {
+        router.get('/Search/:SearchKey/:SearchLocation', function (req, res) {
             var key = req.params.SearchKey;
             var key2 = req.params.SearchLocation;
             console.log('1234123412341Query All list: ' + key);
-            this.Items.retrieveItemWithKeyword(res, { "title": { $regex: ".*" + key + ".*", $options: "$i" }, "location": { $regex: ".*" + key2 + ".*", $options: "$i" } });
+            _this.Items.retrieveItemWithKeyword(res, { "title": { $regex: ".*" + key + ".*", $options: "$i" }, "location": { $regex: ".*" + key2 + ".*", $options: "$i" } });
         });
         this.express.use('/', router);
         this.express.use('/app/json/', express.static(__dirname + '/app/json'));
         //    this.express.use('/images', express.static(__dirname+'/pic'));
         this.express.use('/', express.static(__dirname + '/dist'));
-    }
-}
-exports.default = new App().express;
+    };
+    return App;
+}());
+exports["default"] = new App().express;

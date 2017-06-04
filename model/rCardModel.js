@@ -1,24 +1,25 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const DataAccess_1 = require("../DataAccess");
-var mongoose = DataAccess_1.default.mongooseInstance;
-var mongooseConnection = DataAccess_1.default.mongooseConnection;
-class rCardModel {
-    constructor() {
+exports.__esModule = true;
+var DataAccess_1 = require("../DataAccess");
+var mongoose = DataAccess_1["default"].mongooseInstance;
+var mongooseConnection = DataAccess_1["default"].mongooseConnection;
+var rCardModel = (function () {
+    function rCardModel() {
         this.createSchema();
         this.createModel();
     }
-    createSchema() {
+    rCardModel.prototype.createSchema = function () {
         this.schema = mongoose.Schema({
             cardID: Number,
             creditCardNumber: String,
             address: String,
             expDate: String,
-            cvv: String,
+            cvv: String
         }, { collection: 'rcard' });
-    }
-    createModel() {
+    };
+    rCardModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("rcard", this.schema);
-    }
-}
-exports.default = rCardModel;
+    };
+    return rCardModel;
+}());
+exports["default"] = rCardModel;

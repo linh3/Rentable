@@ -1,14 +1,14 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const DataAccess_1 = require("../DataAccess");
-var mongoose = DataAccess_1.default.mongooseInstance;
-var mongooseConnection = DataAccess_1.default.mongooseConnection;
-class rTransactionModel {
-    constructor() {
+exports.__esModule = true;
+var DataAccess_1 = require("../DataAccess");
+var mongoose = DataAccess_1["default"].mongooseInstance;
+var mongooseConnection = DataAccess_1["default"].mongooseConnection;
+var rTransactionModel = (function () {
+    function rTransactionModel() {
         this.createSchema();
         this.createModel();
     }
-    createSchema() {
+    rTransactionModel.prototype.createSchema = function () {
         this.schema = mongoose.Schema({
             transactionID: Number,
             lenderID: Number,
@@ -20,11 +20,12 @@ class rTransactionModel {
             endDate: Date,
             tStatus: Number,
             lenderReviewID: Number,
-            renterReviewID: Number,
+            renterReviewID: Number
         }, { collection: 'rtransaction' });
-    }
-    createModel() {
+    };
+    rTransactionModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("rtransaction", this.schema);
-    }
-}
-exports.default = rTransactionModel;
+    };
+    return rTransactionModel;
+}());
+exports["default"] = rTransactionModel;
