@@ -88,6 +88,10 @@ class App {
             }
         )
     );
+    router.get('/auth/userdata', this.validateAuth, (req, res) => {
+        console.log('user object:' + JSON.stringify(req.user));
+        res.json(req.user);
+    });
 /*
     router.get('/auth/facebook', 
         passport.authenticate('facebook', 
