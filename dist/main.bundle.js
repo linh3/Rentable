@@ -895,14 +895,14 @@ var RentableApiService = (function () {
         console.log("here2");
         // console.log(iFname);
         //this.account = { userID: 10, fName: iFname, lName: iLname, email: iemail, password: ipassword};
-        return this.http.post(this.host + "/CreateAccount/Create", body)
+        return this.http.post("/CreateAccount/Create", body)
             .map(function (response) { return response.json(); });
     };
     RentableApiService.prototype.postItemToDb = function (body) {
         console.log("here2");
         // console.log(iFname);
         //this.account = { userID: 10, fName: iFname, lName: iLname, email: iemail, password: ipassword};
-        return this.http.post(this.host + "/PostItem/Post", body)
+        return this.http.post("/PostItem/Post", body)
             .map(function (response) { return response.json(); });
     };
     return RentableApiService;
