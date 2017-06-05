@@ -1,10 +1,7 @@
 "use strict";
-exports.__esModule = true;
-var googleOauth2 = (function () {
-    function googleOauth2() {
-    }
-    return googleOauth2;
-}());
+Object.defineProperty(exports, "__esModule", { value: true });
+class googleOauth2 {
+}
 googleOauth2.id = 'Google APP ID';
 googleOauth2.secret = 'Google APP SECRET';
-exports["default"] = googleOauth2;
+exports.default = googleOauth2;
