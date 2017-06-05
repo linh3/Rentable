@@ -62,14 +62,9 @@ class App {
     this.express.use(passport.session());
   }
 
- private validateAuth(req, res, next):void {
-    //if (req.isAuthenticated()) { return next(); }
-        //res.redirect('/');
-        if(!req.isAuthenticated()){
-        console.log("shit");
-        //return next();
-        res.redirect('../index.html');
-        }
+  private validateAuth(req, res, next):void {
+    if (req.isAuthenticated()) { return next(); }
+        res.redirect('/');
   }
   // Configure API endpoints.
   private routes(): void {
