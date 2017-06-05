@@ -40,7 +40,7 @@ class App {
         this.express.use(passport.session());
     }
     validateAuth(req, res, next) {
-        if (!req.isAuthenticated()) {
+        if (req.isAuthenticated()) {
             return next();
         }
         res.redirect('/');
@@ -69,11 +69,13 @@ class App {
             );
         
         */
-        router.use((req, res, next) => {
-            res.header("Access-Control-Allow-Origin", "*");
-            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-            next();
-        });
+        /*
+            router.use((req, res, next) =>{
+                res.header("Access-Control-Allow-Origin", "*");
+                res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+                next();
+            });
+        */
         var bodyParser = require('body-parser');
         router.post('/CreateAccount/Create', this.validateAuth, (req, res) => {
             console.log("here3");

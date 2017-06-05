@@ -63,7 +63,7 @@ class App {
   }
 
   private validateAuth(req, res, next):void {
-    if (!req.isAuthenticated()) { return next(); }
+    if (req.isAuthenticated()) { return next(); }
         res.redirect('/');
   }
   // Configure API endpoints.
@@ -101,13 +101,13 @@ class App {
     );
 
 */
-
+/*
     router.use((req, res, next) =>{
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         next();
     });
-
+*/
     var bodyParser = require('body-parser');
 
     router.post('/CreateAccount/Create',this.validateAuth, (req, res) => {
