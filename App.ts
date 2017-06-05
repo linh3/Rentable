@@ -63,7 +63,7 @@ class App {
   }
 
   private validateAuth(req, res, next):void {
-    if (req.isAuthenticated()) { return next(); }
+    if (!req.isAuthenticated()) { return next(); }
         res.redirect('/');
   }
   // Configure API endpoints.

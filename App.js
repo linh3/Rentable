@@ -40,7 +40,7 @@ class App {
         this.express.use(passport.session());
     }
     validateAuth(req, res, next) {
-        if (req.isAuthenticated()) {
+        if (!req.isAuthenticated()) {
             return next();
         }
         res.redirect('/');
