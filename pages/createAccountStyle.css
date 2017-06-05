@@ -1,0 +1,163 @@
+body{
+    font-family: "Helvetica";
+    padding: 0;
+    margin: 0;
+}
+
+hr{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 1px;
+}
+
+.Container{
+    width: 100%;
+    min-width: 560px;
+    position:absolute;
+}
+
+.Home{
+        transition: background-image 0.5s;
+    background-image: url("HomePageBackground.gif");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 900px;
+}
+
+.Header{ 
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 3%;
+    padding: 10px;
+    left: 10px;
+}
+
+.HeaderFont{
+    font-weight: 500;
+    font-size: 70px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+headColorSwitch{
+    color: orange;
+}
+
+.Header2Font{
+    font-weight: 500;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+    color: lightgrey;
+    letter-spacing: 1px;
+}
+
+nav ul{
+    background-color: transparent;
+    position: absolute;
+    margin-top: 30px;
+    padding: 0px;
+    right:20px;
+    overflow: hidden;
+    color:white;
+    -webkit-transition: max-height 0.3s;
+    -ms-transition: max-height 0.3s;
+    -moz-transition: max-height 0.3s;
+    -o-transition: max-height 0.3s;
+    transition: max-height 0.3s;
+
+}
+
+nav ul li{
+    display: inline-block;
+    margin:0;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase; 
+    padding: 16px 14px;
+    vertical-align: center;
+    text-align: center;
+}
+
+nav ul li:hover{
+    color:black;
+    background:white;
+    transition: background-color .15s 0s ease-in-out, color .15s 0s ease-in-out;
+    -webkit-transition: background-color .15s 0s ease-in-out, color .15s 0s ease-in-out;
+    -ms-transition: background-color .15s 0s ease-in-out, color .15s 0s ease-in-out;
+    -moz-transition: background-color .15s 0s ease-in-out, color .15s 0s ease-in-out;
+    -o-transition: background-color .15s 0s ease-in-out, color .15s 0s ease-in-out;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.Button-SignUp:hover{
+    color:black;
+    background:white;
+    transition: background-color .15s 0s ease-in-out, color .15s 0s ease-in-out;
+    -webkit-transition: background-color .15s 0s ease-in-out, color .15s 0s ease-in-out;
+    -ms-transition: background-color .15s 0s ease-in-out, color .15s 0s ease-in-out;
+    -moz-transition: background-color .15s 0s ease-in-out, color .15s 0s ease-in-out;
+    -o-transition: background-color .15s 0s ease-in-out, color .15s 0s ease-in-out;
+}
+
+.Button-SignUp{
+    display: inline-block;
+    text-decoration: none;
+    font-size:14px;
+    font-style:normal;
+    border-radius: 15px;
+    border: 2px solid white;
+    margin: 0;
+    padding: 16px 20px;
+    margin-top: 2px;
+    line-height: 1;
+    font-weight:600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    color: white;
+    vertical-align: center;
+}
+
+.hamburger{
+    display: none;
+    background:none;
+    position:absolute;
+    margin-top: 20px;
+    right:20px;
+    line-height:15px;
+    padding: 15px 15px;
+    color: white;
+    border:0;
+    border-radius: 5px;
+    font-size: 28px;
+    font-weight: 100;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 63px;
+  background-color: #e0e0e0;
+  text-align: center;
+}
