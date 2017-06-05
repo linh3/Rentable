@@ -193,16 +193,16 @@ var appRoutes = [
         component: __WEBPACK_IMPORTED_MODULE_2__signuppage_component_signuppage_component_component__["a" /* SignuppageComponentComponent */]
     },
     {
-        path: 'Search/:Keyword/:Location',
-        component: __WEBPACK_IMPORTED_MODULE_3__searchpage_component_searchpage_component_component__["a" /* SearchpageComponentComponent */]
-    },
-    {
         path: 'PostItem',
         component: __WEBPACK_IMPORTED_MODULE_4__postitempage_component_postitempage_component_component__["a" /* PostitempageComponentComponent */]
     },
     {
         path: 'auth/google',
         component: __WEBPACK_IMPORTED_MODULE_5__loginpage_component_loginpage_component_component__["a" /* LoginpageComponentComponent */]
+    },
+    {
+        path: 'Search/:Keyword/:Location',
+        component: __WEBPACK_IMPORTED_MODULE_3__searchpage_component_searchpage_component_component__["a" /* SearchpageComponentComponent */]
     }
 ];
 var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(appRoutes);

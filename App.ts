@@ -74,6 +74,9 @@ class App {
   // Configure API endpoints.
   private routes(): void {
     let router = express.Router();
+    router.get('*', (req, res) => {
+        res.sendFile(__dirname + '/dist/index.html');
+    });
 
     router.get('/auth/google', 
         passport.authenticate('google', 
@@ -156,12 +159,11 @@ class App {
     });
 
 
+    this.express.use('/', express.static(__dirname+'/dist'));
 
     this.express.use('/', router);
     this.express.use('/app/json/', express.static(__dirname+'/app/json'));
 //    this.express.use('/images', express.static(__dirname+'/pic'));
-    this.express.use('/', express.static(__dirname+'/dist'));
-
   }
 
 }
