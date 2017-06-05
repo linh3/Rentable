@@ -83,7 +83,7 @@ class App {
 
     router.get('/auth/google/callback', 
         passport.authenticate('google', 
-            { successRedirect: '/CreateAccount/Creates', failureRedirect: '/'
+            { successRedirect: '/PostItem', failureRedirect: '/'
             }
         )
     );
