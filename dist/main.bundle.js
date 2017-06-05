@@ -1066,7 +1066,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/searchpage-component/searchresult-component/searchresult-component.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id = \"search\" class=\"search\">\n  <h1 class=\"TitleFont\">Rentals fuck You...</h1>  \n  <div *ngIf=\"resultList?.length == 0\">\n    <br><br><br><h1 class=\"TitleFont\">Sorry, Nothing found from your location.</h1><br><br><br>\n  </div>\n  <a [routerLink] = \"['']\" class= \"searchContent\" *ngFor = \"let each of resultList\">\n    <img src=\"{{each.image}}\" class=\"searchImgs\">\n    <div class=\"TitleSubFont\">{{each.title}}</div>\n    <div class=\"ContentFont\">Price: ${{each.price}} per day<br>Location: {{each.location}}<br><br>Description: {{each.description}}</div>\n  </a>\n</div>\n\n"
+module.exports = "<div id = \"search\" class=\"search\">\n  <h1 class=\"TitleFont\">Rentals Near You...</h1>  \n  <div *ngIf=\"resultList?.length == 0\">\n    <br><br><br><h1 class=\"TitleFont\">Sorry, Nothing found from your location.</h1><br><br><br>\n  </div>\n  <a [routerLink] = \"['']\" class= \"searchContent\" *ngFor = \"let each of resultList\">\n    <img src=\"{{each.image}}\" class=\"searchImgs\">\n    <div class=\"TitleSubFont\">{{each.title}}</div>\n    <div class=\"ContentFont\">Price: ${{each.price}} per day<br>Location: {{each.location}}<br><br>Description: {{each.description}}</div>\n  </a>\n</div>\n\n"
 
 /***/ }),
 
