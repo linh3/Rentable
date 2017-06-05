@@ -4,7 +4,7 @@ let passport = require('passport');
 let GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 // Creates a Passport configuration for Google
-class GooglePassport {
+export default class GooglePassport { 
 
     userId: string;
     displayName: string;
@@ -15,11 +15,11 @@ class GooglePassport {
     constructor() {
         this.clientId = googleAppAuth.id;
         this.secretId = googleAppAuth.secret;
-
+        console.log("here12341234");
         passport.use(new GoogleStrategy({
                 clientID: this.clientId,
                 clientSecret: this.secretId,
-                callbackURL: "http://rentableappsu.azurewebsites.net",
+                callbackURL: "http://rentableappsu.azurewebsites.net/PostItem",
                 profileFields: ['id', 'displayName', 'emails']
             },
             (accessToken, refreshToken, profile, done) => {
@@ -42,4 +42,4 @@ class GooglePassport {
         });
     }
 }
-export default GooglePassport;
+//export default GooglePassport;
