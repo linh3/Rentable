@@ -888,7 +888,7 @@ var RentableApiService = (function () {
         this.host = 'http://localhost:8080';
     }
     RentableApiService.prototype.getSearchingResult = function (url) {
-        return this.http.get(this.host + url)
+        return this.http.get(url)
             .map(function (response) { return response.json(); });
     };
     RentableApiService.prototype.postAccountToDb = function (body) {
