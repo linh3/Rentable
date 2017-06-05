@@ -11,7 +11,7 @@ class GooglePassport {
         passport.use(new GoogleStrategy({
             clientID: this.clientId,
             clientSecret: this.secretId,
-            callbackURL: "http://rentableappsu.azurewebsites.net",
+            callbackURL: "http://rentableappsu.azurewebsites.net/auth/google/callback",
             profileFields: ['id', 'displayName', 'emails']
         }, (accessToken, refreshToken, profile, done) => {
             process.nextTick(() => {
