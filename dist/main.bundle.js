@@ -175,9 +175,7 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signuppage_component_signuppage_component_component__ = __webpack_require__("./src/app/signuppage-component/signuppage-component.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__searchpage_component_searchpage_component_component__ = __webpack_require__("./src/app/searchpage-component/searchpage-component.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__postitempage_component_postitempage_component_component__ = __webpack_require__("./src/app/postitempage-component/postitempage-component.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__loginpage_component_loginpage_component_component__ = __webpack_require__("./src/app/loginpage-component/loginpage-component.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routing; });
-
 
 
 
@@ -196,10 +194,10 @@ var appRoutes = [
         path: 'PostItem',
         component: __WEBPACK_IMPORTED_MODULE_4__postitempage_component_postitempage_component_component__["a" /* PostitempageComponentComponent */]
     },
-    {
-        path: 'auth/google',
-        component: __WEBPACK_IMPORTED_MODULE_5__loginpage_component_loginpage_component_component__["a" /* LoginpageComponentComponent */]
-    },
+    //{
+    //  path: 'auth/google',
+    //component: LoginpageComponentComponent
+    //},
     {
         path: 'Search/:Keyword/:Location',
         component: __WEBPACK_IMPORTED_MODULE_3__searchpage_component_searchpage_component_component__["a" /* SearchpageComponentComponent */]
