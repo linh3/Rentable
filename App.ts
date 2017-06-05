@@ -74,9 +74,7 @@ class App {
   // Configure API endpoints.
   private routes(): void {
     let router = express.Router();
-    router.get('*', (req, res) => {
-        res.sendFile(__dirname + '/dist/index.html');
-    });
+   
 
     router.get('/auth/google', 
         passport.authenticate('google', 
@@ -157,6 +155,10 @@ class App {
         console.log('1234123412341Query All list: ' + key);
         this.Items.retrieveItemWithKeyword(res, {"title": {$regex: ".*" + key + ".*", $options:"$i"}, "location": {$regex: ".*" + key2 + ".*", $options:"$i"} });
     });
+
+     router.get('*', (req, res) => {
+        res.sendFile(__dirname + '/dist/index.html');
+    });
 
 
     this.express.use('/', express.static(__dirname+'/dist'));

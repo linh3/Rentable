@@ -51,9 +51,6 @@ class App {
     // Configure API endpoints.
     routes() {
         let router = express.Router();
-        router.get('*', (req, res) => {
-            res.sendFile(__dirname + '/dist/index.html');
-        });
         router.get('/auth/google', passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login', 'email'] }));
         router.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/PostItem', failureRedirect: '/'
         }));
@@ -116,6 +113,9 @@ class App {
             var key2 = req.params.SearchLocation;
             console.log('1234123412341Query All list: ' + key);
             this.Items.retrieveItemWithKeyword(res, { "title": { $regex: ".*" + key + ".*", $options: "$i" }, "location": { $regex: ".*" + key2 + ".*", $options: "$i" } });
+        });
+        router.get('*', (req, res) => {
+            res.sendFile(__dirname + '/dist/index.html');
         });
         this.express.use('/', express.static(__dirname + '/dist'));
         this.express.use('/', router);
