@@ -676,7 +676,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/navbar-component/navbar-component.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav id=\"mainNavbar\" (window:resize) = \"FixNarBar($event)\">\n  <button class=\"hamburger\" (click) = \"toggleNavBar()\">&#9776;</button>\n  <ul *ngIf= \"NavBarDisplay\">\n    <a href=\"../\" id=\"Homelink\"><li>Home</li></a>\n    <a href=\"../#ThreeSteps\" id=\"ThreeStepslink\" ><li>How it works</li></a>\n    <a href=\"../#PricingInfo\" id=\"PricingInfolink\" ><li>Pricing</li></a>\n    <a [routerLink] = \"['/PostItem']\" id=\"PostItemLink\"><li>Your Post</li></a>  \n    <a [routerLink] = \"['/auth/google']\" id=\"SignUplink\"><li class=\"Button-SignUp\" >Login</li></a>\n  </ul>\n                    <!--<button class=\"cross\">&#735;</button>-->\n</nav>\n"
+module.exports = "<nav id=\"mainNavbar\" (window:resize) = \"FixNarBar($event)\">\n  <button class=\"hamburger\" (click) = \"toggleNavBar()\">&#9776;</button>\n  <ul *ngIf= \"NavBarDisplay\">\n    <a href=\"../\" id=\"Homelink\"><li>Home</li></a>\n    <a href=\"../#ThreeSteps\" id=\"ThreeStepslink\" ><li>How it works</li></a>\n    <a href=\"../#PricingInfo\" id=\"PricingInfolink\" ><li>Pricing</li></a>\n    <a [routerLink] = \"['/PostItem']\" id=\"PostItemLink\"><li>Your Post</li></a>  \n    <a href=\"../auth/google\" id=\"SignUplink\"><li class=\"Button-SignUp\" >Login</li></a>\n  </ul>\n                    <!--<button class=\"cross\">&#735;</button>-->\n</nav>\n"
 
 /***/ }),
 
