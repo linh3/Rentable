@@ -15,7 +15,6 @@ class GooglePassport {
             profileFields: ['id', 'displayName', 'emails']
         }, (accessToken, refreshToken, profile, done) => {
             process.nextTick(() => {
-                console.log('validating facebook profile:' + JSON.stringify(profile));
                 this.userId = profile.id;
                 this.displayName = profile.displayName;
                 this.email = profile.emails[0].value;
