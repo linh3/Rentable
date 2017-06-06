@@ -976,6 +976,7 @@ var PostlsitresultComponentComponent = (function () {
         var _this = this;
         this.rentableService$ = rentableService$;
         this._router = _router;
+        this.JJ = { 'email': "" };
         this.rentableService$.getUserInfo()
             .subscribe(function (result) {
             console.log("first " + (_this.email = result.emails[0].value));
