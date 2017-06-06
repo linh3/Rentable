@@ -982,6 +982,7 @@ var PostlsitresultComponentComponent = (function () {
             _this.Lname = result.name.familyName;
             _this.Fname = result.name.givenName;
         });
+        console.log("dasfasdf" + this.Fname);
     }
     PostlsitresultComponentComponent.prototype.ngOnInit = function () {
     };
