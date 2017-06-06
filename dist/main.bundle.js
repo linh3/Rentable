@@ -980,6 +980,8 @@ var PostlsitresultComponentComponent = (function () {
             .subscribe(function (result) {
             console.log("first " + (_this.email = result.emails[0].value));
             console.log("second " + _this.email);
+            _this.JJ.email = _this.email;
+            console.log("third " + _this.JJ.email);
             _this.userID = result.id;
             _this.Lname = result.name.familyName;
             _this.Fname = result.name.givenName;
