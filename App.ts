@@ -117,7 +117,7 @@ class App {
         res.sendFile(path.join(__dirname + '/index.html'));
 
         console.log(req.body);
-        var jsonObj = req;
+        var jsonObj = req.body;
 //        jsonObj.userID = this.idGenerator;
         this.Users.model.create([jsonObj], (err) => {
             if (err) {
