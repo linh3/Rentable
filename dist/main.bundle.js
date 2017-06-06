@@ -761,7 +761,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/postitempage-component/postitembox-component/postitembox-component.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id = \"PostItem\" class = \"PostItem\">\n    <form #form=\"ngForm\" (ngSubmit) = \"postItem(form)\">\n      Title:<br>\n      <input type=\"text\" name=\"title\" ngModel><br><br>\n      Price:<br>\n      <input type=\"text\" name=\"price\" ngModel><br><br>\n      Condition:<br>\n      <input type=\"text\" name=\"condition\" ngModel><br><br>\n      Description:<br>\n      <input type=\"text\" name=\"description\" ngModel><br><br>\n      Location:<br>\n      <input type=\"text\" name=\"location\" ngModel><br>\n      Image:<br>\n      <input type=\"text\" name=\"image\" ngModel><br>\n      <input type=\"submit\" value=\"Post!\">\n    </form>\n</div>"
+module.exports = "<div id = \"PostItem\" class = \"PostItem\">\n    <form #form=\"ngForm\" (ngSubmit) = \"postItem(form)\">\n      Title:<br>\n      <input type=\"text\" name=\"title\" ngModel><br><br>\n      Price:<br>\n      <input type=\"text\" name=\"price\" ngModel><br><br>\n      Condition:<br>\n      <input type=\"text\" name=\"condition\" ngModel><br><br>\n      Description:<br>\n      <input type=\"text\" name=\"description\" ngModel><br><br>\n      Location:<br>\n      <input type=\"text\" name=\"location\" ngModel><br>\n      Image:<br>\n      <input type=\"text\" name=\"image\" ngModel><br>\n      <input [routerLink] = \"['/PostLists']\"type=\"submit\" value=\"Post!\">\n    </form>\n</div>"
 
 /***/ }),
 
