@@ -180,8 +180,10 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__homepage_component_homepage_component_component__ = __webpack_require__("./src/app/homepage-component/homepage-component.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signuppage_component_signuppage_component_component__ = __webpack_require__("./src/app/signuppage-component/signuppage-component.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__searchpage_component_searchpage_component_component__ = __webpack_require__("./src/app/searchpage-component/searchpage-component.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__postlist_component_postlist_component_component__ = __webpack_require__("./src/app/postlist-component/postlist-component.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__postitempage_component_postitempage_component_component__ = __webpack_require__("./src/app/postitempage-component/postitempage-component.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__postlist_component_postlist_component_component__ = __webpack_require__("./src/app/postlist-component/postlist-component.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routing; });
+
 
 
 
@@ -197,8 +199,12 @@ var appRoutes = [
         component: __WEBPACK_IMPORTED_MODULE_2__signuppage_component_signuppage_component_component__["a" /* SignuppageComponentComponent */]
     },
     {
+        path: 'PostLists',
+        component: __WEBPACK_IMPORTED_MODULE_5__postlist_component_postlist_component_component__["a" /* PostlistComponentComponent */]
+    },
+    {
         path: 'PostItem',
-        component: __WEBPACK_IMPORTED_MODULE_4__postlist_component_postlist_component_component__["a" /* PostlistComponentComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_4__postitempage_component_postitempage_component_component__["a" /* PostitempageComponentComponent */]
     },
     //{
     //  path: 'auth/google',
@@ -680,7 +686,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/navbar-component/navbar-component.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav id=\"mainNavbar\" (window:resize) = \"FixNarBar($event)\">\n  <button class=\"hamburger\" (click) = \"toggleNavBar()\">&#9776;</button>\n  <ul *ngIf= \"NavBarDisplay\">\n    <a href=\"../\" id=\"Homelink\"><li>Home</li></a>\n    <a href=\"../#ThreeSteps\" id=\"ThreeStepslink\" ><li>How it works</li></a>\n    <a href=\"../#PricingInfo\" id=\"PricingInfolink\" ><li>Pricing</li></a>\n    <a [routerLink] = \"['/PostItem']\" id=\"PostItemLink\"><li>Your Post</li></a>  \n    <a href=\"../auth/google\" id=\"SignUplink\"><li class=\"Button-SignUp\" >Login</li></a>\n  </ul>\n                    <!--<button class=\"cross\">&#735;</button>-->\n</nav>\n"
+module.exports = "<nav id=\"mainNavbar\" (window:resize) = \"FixNarBar($event)\">\n  <button class=\"hamburger\" (click) = \"toggleNavBar()\">&#9776;</button>\n  <ul *ngIf= \"NavBarDisplay\">\n    <a href=\"../\" id=\"Homelink\"><li>Home</li></a>\n    <a href=\"../#ThreeSteps\" id=\"ThreeStepslink\" ><li>How it works</li></a>\n    <a href=\"../#PricingInfo\" id=\"PricingInfolink\" ><li>Pricing</li></a>\n    <a [routerLink] = \"['/PostLists']\" id=\"PostItemLink\"><li>Your Post</li></a>  \n    <a href=\"../auth/google\" id=\"SignUplink\"><li class=\"Button-SignUp\" >Login</li></a>\n  </ul>\n                    <!--<button class=\"cross\">&#735;</button>-->\n</nav>\n"
 
 /***/ }),
 
@@ -947,7 +953,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/postlist-component/postlsitresult-component/postlsitresult-component.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id = \"search\" class=\"search\">\n  <h1 class=\"TitleFont\">{{email}}Your Posts...</h1>\n  <h1 class=\"TitleFont\">{{userID}}</h1>  \n  <h1 class=\"TitleFont\">{{Fname}}</h1>  \n  <h1 class=\"TitleFont\">{{Lname}}</h1>  \n  <div *ngIf=\"resultList?.length == 0\">\n    <br><br><br><h1 class=\"TitleFont\">Sorry, You don't have any post</h1><br><br><br>\n  </div>\n  <a [routerLink] = \"['']\" class= \"searchContent\" *ngFor = \"let each of resultList\">\n    <img src=\"{{each.image}}\" class=\"searchImgs\">\n    <div class=\"TitleSubFont\">{{each.title}}</div>\n    <div class=\"ContentFont\">Price: ${{each.price}} per day<br>Location: {{each.location}}<br><br>Description: {{each.description}}</div>\n  </a>\n</div>\n"
+module.exports = "<div id = \"search\" class=\"search\">\n  <h1 class=\"TitleFont\">{{email}}Your Posts...</h1>\n  <h1 class=\"TitleFont\">{{userID}}</h1>  \n  <h1 class=\"TitleFont\">{{Fname}}</h1>  \n  <h1 class=\"TitleFont\">{{Lname}}</h1>  \n  <div *ngIf=\"resultList?.length == 0\">\n    <br><br><br><h1 class=\"TitleFont\">Sorry, You don't have any post</h1><br><br><br>\n  </div>\n  <a [routerLink] = \"['']\" class= \"searchContent\" *ngFor = \"let each of resultList\">\n    <img src=\"{{each.image}}\" class=\"searchImgs\">\n    <div class=\"TitleSubFont\">{{each.title}}</div>\n    <div class=\"ContentFont\">Price: ${{each.price}} per day<br>Location: {{each.location}}<br><br>Description: {{each.description}}</div>\n  </a>\n  <a [routerLink] = \"['/PostItem']\" id=\"PostItemLink\"><li>Add Post</li></a>  \n\n</div>\n"
 
 /***/ }),
 

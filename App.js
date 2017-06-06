@@ -52,7 +52,7 @@ class App {
     routes() {
         let router = express.Router();
         router.get('/auth/google', passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login', 'email'] }));
-        router.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/PostItem', failureRedirect: '/'
+        router.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/PostLists', failureRedirect: '/'
         }));
         router.get('/auth/userdata', /*this.validateAuth, */ (req, res) => {
             console.log('user object:' + JSON.stringify(req.user));
