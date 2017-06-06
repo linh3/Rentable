@@ -166,7 +166,7 @@ itemsCollection.remove({})
 itemsCollection.insert(
 {
     itemID: 1,
-    userID: 1,
+    userID: 103587235652724668583,
     reviewID: 1,
     dateCreated: 1/3/2017,
     title: "Macbook Pro",
@@ -180,7 +180,7 @@ itemsCollection.insert(
 itemsCollection.insert(
 {
     itemID: 2,
-    userID: 2,
+    userID: 103587235652724668583,
     reviewID: 3,
     dateCreated: 2/4/2017,
     title: "Green Bicycle ",
@@ -194,7 +194,7 @@ itemsCollection.insert(
 itemsCollection.insert(
 {
     itemID: 4,
-    userID: 2,
+    userID: 103587235652724668583,
     reviewID: 3,
     dateCreated: 2/4/2017,
     title: "Red Bicycle",
