@@ -791,9 +791,9 @@ var PostitemboxComponentComponent = (function () {
             .subscribe(function (result) { _this.userID = result.id; });
     }
     PostitemboxComponentComponent.prototype.postItem = function (form) {
-        console.log("1 " + form.value);
-        form.userID = this.userID;
-        console.log("2 " + form.value);
+        console.log("1 " + JSON.stringify(form.value));
+        form.attribute("userID").value = this.userID;
+        console.log("2 " + JSON.stringify(form.value));
         this.rentableService$.postItemToDb(form.value)
             .subscribe(function (result) { });
     };
