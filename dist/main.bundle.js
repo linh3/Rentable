@@ -992,20 +992,15 @@ var PostlsitresultComponentComponent = (function () {
             _this.Fname = result.name.givenName;
             _this.JJ.fName = _this.Fname;
             //console.log("fname: " +this.JJ.fName);
-            _this.userID = "2";
             rentableService$.checkUser(_this.userID)
                 .subscribe(function (result) {
                 _this.userInfo = result;
                 console.log(_this.userInfo);
-                if (_this.userInfo != null) {
-                    console.log("found");
-                }
-                else {
-                    console.log("not found");
+                if (_this.userInfo == null) {
+                    rentableService$.postAccountToDb(_this.JJ)
+                        .subscribe(function (result) { });
                 }
             });
-            //rentableService$.postAccountToDb(this.JJ)
-            //.subscribe(result => { });
         }, function () { _this.userID = ""; _this.email = ""; });
     }
     PostlsitresultComponentComponent.prototype.ngOnInit = function () {
