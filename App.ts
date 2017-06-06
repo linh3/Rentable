@@ -63,8 +63,10 @@ class App {
   }
 
   private validateAuth(req, res, next):void {
-    if (req.isAuthenticated()) { return next(); }
-        res.redirect('/auth/google');
+      console.log("checking..");
+    if (req.isAuthenticated()) { console.log("pass");return next(); }
+        console.log("asdf");
+        res.redirect('/');
   }
   // Configure API endpoints.
   private routes(): void {
@@ -83,7 +85,7 @@ class App {
             }
         )
     );
-    router.get('/auth/userdata', this.validateAuth, (req, res) => {
+    router.get('/auth/userdata', /*this.validateAuth, */(req, res) => {
         console.log('user object:' + JSON.stringify(req.user));
         res.json(req.user);
     });
@@ -148,8 +150,9 @@ class App {
         this.Tasks.retrieveTasksDetails(res, {listId: id});
     });
 */
-   router.get('/Search/:SearchKey/:SearchLocation', (req, res) => {
-        var key = req.params.SearchKey;
+   router.get('/Search/:SearchKey/:SearchLocation',this.validateAuth, (req, res) => {
+        console.log("asdfasdfasdfasdf");
+        var key = req.params.SearchKey;
         var key2 = req.params.SearchLocation;
         console.log('1234123412341Query All list: ' + key);
         this.Items.retrieveItemWithKeyword(res, {"title": {$regex: ".*" + key + ".*", $options:"$i"}, "location": {$regex: ".*" + key2 + ".*", $options:"$i"} });

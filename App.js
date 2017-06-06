@@ -40,10 +40,13 @@ class App {
         this.express.use(passport.session());
     }
     validateAuth(req, res, next) {
+        console.log("checking..");
         if (req.isAuthenticated()) {
+            console.log("pass");
             return next();
         }
-        res.redirect('/auth/google');
+        console.log("asdf");
+        res.redirect('/');
     }
     // Configure API endpoints.
     routes() {
@@ -51,7 +54,7 @@ class App {
         router.get('/auth/google', passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login', 'email'] }));
         router.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/PostItem', failureRedirect: '/'
         }));
-        router.get('/auth/userdata', this.validateAuth, (req, res) => {
+        router.get('/auth/userdata', /*this.validateAuth, */ (req, res) => {
             console.log('user object:' + JSON.stringify(req.user));
             res.json(req.user);
         });
@@ -111,7 +114,8 @@ class App {
                 this.Tasks.retrieveTasksDetails(res, {listId: id});
             });
         */
-        router.get('/Search/:SearchKey/:SearchLocation', (req, res) => {
+        router.get('/Search/:SearchKey/:SearchLocation', this.validateAuth, (req, res) => {
+            console.log("asdfasdfasdfasdf");
             var key = req.params.SearchKey;
             var key2 = req.params.SearchLocation;
             console.log('1234123412341Query All list: ' + key);

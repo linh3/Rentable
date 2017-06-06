@@ -96,6 +96,8 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__postitempage_component_postitembox_component_postitembox_component_component__ = __webpack_require__("./src/app/postitempage-component/postitembox-component/postitembox-component.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__loginpage_component_loginpage_component_component__ = __webpack_require__("./src/app/loginpage-component/loginpage-component.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__loginpage_component_loginbox_component_loginbox_component_component__ = __webpack_require__("./src/app/loginpage-component/loginbox-component/loginbox-component.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__postlist_component_postlist_component_component__ = __webpack_require__("./src/app/postlist-component/postlist-component.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__postlist_component_postlsitresult_component_postlsitresult_component_component__ = __webpack_require__("./src/app/postlist-component/postlsitresult-component/postlsitresult-component.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -103,6 +105,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -150,6 +154,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_20__postitempage_component_postitembox_component_postitembox_component_component__["a" /* PostitemboxComponentComponent */],
             __WEBPACK_IMPORTED_MODULE_21__loginpage_component_loginpage_component_component__["a" /* LoginpageComponentComponent */],
             __WEBPACK_IMPORTED_MODULE_22__loginpage_component_loginbox_component_loginbox_component_component__["a" /* LoginboxComponentComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__postlist_component_postlist_component_component__["a" /* PostlistComponentComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__postlist_component_postlsitresult_component_postlsitresult_component_component__["a" /* PostlsitresultComponentComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_14__app_router__["a" /* routing */],
@@ -174,7 +180,7 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__homepage_component_homepage_component_component__ = __webpack_require__("./src/app/homepage-component/homepage-component.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signuppage_component_signuppage_component_component__ = __webpack_require__("./src/app/signuppage-component/signuppage-component.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__searchpage_component_searchpage_component_component__ = __webpack_require__("./src/app/searchpage-component/searchpage-component.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__postitempage_component_postitempage_component_component__ = __webpack_require__("./src/app/postitempage-component/postitempage-component.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__postlist_component_postlist_component_component__ = __webpack_require__("./src/app/postlist-component/postlist-component.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routing; });
 
 
@@ -192,7 +198,7 @@ var appRoutes = [
     },
     {
         path: 'PostItem',
-        component: __WEBPACK_IMPORTED_MODULE_4__postitempage_component_postitempage_component_component__["a" /* PostitempageComponentComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_4__postlist_component_postlist_component_component__["a" /* PostlistComponentComponent */]
     },
     //{
     //  path: 'auth/google',
@@ -200,7 +206,7 @@ var appRoutes = [
     //},
     {
         path: 'Search/:Keyword/:Location',
-        component: __WEBPACK_IMPORTED_MODULE_3__searchpage_component_searchpage_component_component__["a" /* SearchpageComponentComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_3__searchpage_component_searchpage_component_component__["a" /* SearchpageComponentComponent */],
     }
 ];
 var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(appRoutes);
@@ -859,6 +865,138 @@ PostitempageComponentComponent = __decorate([
 
 /***/ }),
 
+/***/ "./src/app/postlist-component/postlist-component.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".Home{\n    background-image: url(\"/pic/HomePageBackground.gif\");\n    background-size: cover;\n    background-position: center center;\n    background-repeat: no-repeat;\n    position: relative;\n    height: 750px;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "./src/app/postlist-component/postlist-component.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class = Home>\n  <app-header-component></app-header-component>\n  <app-navbar-component></app-navbar-component>\n  <app-postlsitresult-component></app-postlsitresult-component>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/postlist-component/postlist-component.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostlistComponentComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PostlistComponentComponent = (function () {
+    function PostlistComponentComponent() {
+    }
+    PostlistComponentComponent.prototype.ngOnInit = function () {
+    };
+    return PostlistComponentComponent;
+}());
+PostlistComponentComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+        selector: 'app-postlist-component',
+        template: __webpack_require__("./src/app/postlist-component/postlist-component.component.html"),
+        styles: [__webpack_require__("./src/app/postlist-component/postlist-component.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], PostlistComponentComponent);
+
+//# sourceMappingURL=postlist-component.component.js.map
+
+/***/ }),
+
+/***/ "./src/app/postlist-component/postlsitresult-component/postlsitresult-component.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".search{\n    margin-left: 10px;\n    margin-right: 10px; \n    margin-top: 50px;\n    padding: 10px;\n    text-align: center;\n    position: relative;\n}\n.searchImg{\n    width: 220px;\n    height:140px;\n}\n.searchContent{\n    border-radius: 5px;\n    text-align: center;\n    width: 350px;\n    padding: 10px;\n    margin: 10px;\n    margin-top: 25px;\n    display: inline-block;\n    vertical-align: top;\n    word-wrap:break-word;\n    text-decoration: none;\n    /*box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);*/\n\n}\n\n.searchContent:hover{\n    text-align: center;\n    width: 350px;\n    padding: 10px;\n    margin: 10px;\n    margin-top: 25px;\n    display: inline-block;\n    vertical-align: top;\n    word-wrap:break-word;\n    background-color: #e0e0e0;\n    text-decoration: none;\n    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/\n\n}\n.TitleFont{\n    font-weight: 400;\n    letter-spacing: 1px;\n    font-size: 30px;\n}\n.TitleSubFont{\n    padding: 15px;\n    font-weight: 300;\n    letter-spacing: 2px;\n    font-size: 22px;\n    text-transform: uppercase;\n    color: #474747;\n}\n\n.ContentFont{\n    padding: 5px;\n    letter-spacing: 1px;\n    font-size: 15px;\n    font-weight: 100;\n    line-height: 25px;\n    color: dimgrey;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "./src/app/postlist-component/postlsitresult-component/postlsitresult-component.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id = \"search\" class=\"search\">\n  <h1 class=\"TitleFont\">Your Posts...</h1>  \n  <div *ngIf=\"resultList?.length == 0\">\n    <br><br><br><h1 class=\"TitleFont\">Sorry, You don't have any post</h1><br><br><br>\n  </div>\n  <a [routerLink] = \"['']\" class= \"searchContent\" *ngFor = \"let each of resultList\">\n    <img src=\"{{each.image}}\" class=\"searchImgs\">\n    <div class=\"TitleSubFont\">{{each.title}}</div>\n    <div class=\"ContentFont\">Price: ${{each.price}} per day<br>Location: {{each.location}}<br><br>Description: {{each.description}}</div>\n  </a>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/postlist-component/postlsitresult-component/postlsitresult-component.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rentable_api_service__ = __webpack_require__("./src/app/rentable-api.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PostlsitresultComponentComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PostlsitresultComponentComponent = (function () {
+    function PostlsitresultComponentComponent(rentableService$, _router) {
+        var _this = this;
+        this._router = _router;
+        rentableService$.getUserInfo()
+            .subscribe(function (result) { _this.user = result; });
+        console.log(this.user);
+    }
+    PostlsitresultComponentComponent.prototype.ngOnInit = function () {
+    };
+    return PostlsitresultComponentComponent;
+}());
+PostlsitresultComponentComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+        selector: 'app-postlsitresult-component',
+        template: __webpack_require__("./src/app/postlist-component/postlsitresult-component/postlsitresult-component.component.html"),
+        styles: [__webpack_require__("./src/app/postlist-component/postlsitresult-component/postlsitresult-component.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__rentable_api_service__["a" /* RentableApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__rentable_api_service__["a" /* RentableApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], PostlsitresultComponentComponent);
+
+var _a, _b;
+//# sourceMappingURL=postlsitresult-component.component.js.map
+
+/***/ }),
+
 /***/ "./src/app/rentable-api.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -885,6 +1023,10 @@ var RentableApiService = (function () {
         this.http = http;
         this.host = 'http://localhost:8080';
     }
+    RentableApiService.prototype.getUserInfo = function () {
+        return this.http.get("/auth/userdata")
+            .map(function (response) { return response.json(); });
+    };
     RentableApiService.prototype.getSearchingResult = function (url) {
         return this.http.get(url)
             .map(function (response) { return response.json(); });
@@ -897,7 +1039,7 @@ var RentableApiService = (function () {
             .map(function (response) { return response.json(); });
     };
     RentableApiService.prototype.postItemToDb = function (body) {
-        console.log("here2");
+        console.log("here21244");
         // console.log(iFname);
         //this.account = { userID: 10, fName: iFname, lName: iLname, email: iemail, password: ipassword};
         return this.http.post("/PostItem/Post", body)
