@@ -974,26 +974,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PostlsitresultComponentComponent = (function () {
     function PostlsitresultComponentComponent(rentableService$, _router) {
         var _this = this;
+        this.rentableService$ = rentableService$;
         this._router = _router;
-        rentableService$.getUserInfo()
+        this.rentableService$.getUserInfo()
             .subscribe(function (result) {
-            _this.userInfo = result;
-            console.log('1 ' + _this.userInfo);
+            _this.email = result.emails[0].value;
+            console.log('h ' + _this.email);
+            _this.userID = result.id;
+            _this.Lname = result.name.familyName;
+            _this.Fname = result.name.givenName;
         });
-        console.log(this.userInfo);
-        console.log('2 ' + this.userInfo.value);
         console.log(this.userID);
         console.log(this.email);
         console.log(this.Fname);
         /*  this.JJ.userID = this.userID;
           this.JJ.email = this.email;
           this.JJ.fName = this.Fname;
-          this.JJ.lName = this.Lname;
-          this.email = result.emails[0].value;
-                                   console.log('h '+this.email);
-                                   this.userID = result.id;
-                                   this.Lname = result.name.familyName;
-                                   this.Fname = result.name.givenName;*/
+          this.JJ.lName = this.Lname;*/
         //var JO = {userID : this.userID, email: this.email, fName: this.Fname, lName: this.Lname};
         console.log(this.JJ);
         // rentableService$.postAccountToDb(this.JJ)
