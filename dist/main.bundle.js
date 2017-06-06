@@ -976,33 +976,27 @@ var PostlsitresultComponentComponent = (function () {
         var _this = this;
         this.rentableService$ = rentableService$;
         this._router = _router;
-        this.JJ = { 'userID': -1, 'email': "", 'fName': "", 'lName': "" };
+        this.JJ = { 'userID': "", 'email': "", 'fName': "", 'lName': "" };
         this.rentableService$.getUserInfo()
             .subscribe(function (result) {
-            console.log("first " + (_this.email = result.emails[0].value));
-            console.log("second " + _this.email);
+            //console.log("first "+ (this.email = result.emails[0].value));
+            //console.log("second " + this.email);
             _this.JJ.email = _this.email;
-            console.log("third " + _this.JJ.email);
+            //console.log("third " + this.JJ.email);
             _this.userID = result.id;
             _this.JJ.userID = (_this.userID);
-            console.log("uid " + _this.JJ.userID);
+            //console.log("uid " +this.JJ.userID);
             _this.Lname = result.name.familyName;
             _this.JJ.lName = _this.Lname;
-            console.log("lname: " + _this.JJ.lName);
+            //console.log("lname: " + this.JJ.lName);
             _this.Fname = result.name.givenName;
             _this.JJ.fName = _this.Fname;
-            console.log("fname: " + _this.JJ.fName);
-            rentableService$.postAccountToDb(_this.JJ)
-                .subscribe(function (result) { });
-        }, function () { _this.userID = -1; _this.email = ""; });
-        /*  this.JJ.userID = this.userID;
-          this.JJ.email = this.email;
-          this.JJ.fName = this.Fname;
-          this.JJ.lName = this.Lname;*/
-        //var JO = {userID : this.userID, email: this.email, fName: this.Fname, lName: this.Lname};
-        //console.log(this.JJ);
-        rentableService$.postAccountToDb(this.JJ)
-            .subscribe(function (result) { });
+            //console.log("fname: " +this.JJ.fName);
+            rentableService$.checkUser(_this.userID)
+                .subscribe(function (result) { _this.userInfo = result; });
+            //rentableService$.postAccountToDb(this.JJ)
+            //.subscribe(result => { });
+        }, function () { _this.userID = ""; _this.email = ""; });
     }
     PostlsitresultComponentComponent.prototype.ngOnInit = function () {
     };
@@ -1050,6 +1044,10 @@ var RentableApiService = (function () {
     }
     RentableApiService.prototype.getUserInfo = function () {
         return this.http.get("/auth/userdata")
+            .map(function (response) { return response.json(); });
+    };
+    RentableApiService.prototype.checkUser = function (userID) {
+        return this.http.get("/user/" + userID)
             .map(function (response) { return response.json(); });
     };
     RentableApiService.prototype.getSearchingResult = function (url) {
