@@ -43,7 +43,7 @@ class App {
         if (req.isAuthenticated()) {
             return next();
         }
-        res.redirect('/');
+        res.redirect('/auth/google');
     }
     // Configure API endpoints.
     routes() {

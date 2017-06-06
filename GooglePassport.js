@@ -8,7 +8,6 @@ class GooglePassport {
     constructor() {
         this.clientId = googleOauth2_1.default.id;
         this.secretId = googleOauth2_1.default.secret;
-        console.log("here12341234");
         passport.use(new GoogleStrategy({
             clientID: this.clientId,
             clientSecret: this.secretId,

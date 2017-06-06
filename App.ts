@@ -64,7 +64,7 @@ class App {
 
   private validateAuth(req, res, next):void {
     if (req.isAuthenticated()) { return next(); }
-        res.redirect('/');
+        res.redirect('/auth/google');
   }
   // Configure API endpoints.
   private routes(): void {
@@ -126,7 +126,7 @@ class App {
         this.idGenerator++;
     });
 
-    router.post('/PostItem/Post', this.validateAuth,(req, res) => {
+    router.post('/PostItem/Post',this.validateAuth, (req, res) => {
         console.log("here444");
         res.sendFile(path.join(__dirname + '/index.html'));
 

@@ -15,7 +15,6 @@ export default class GooglePassport {
     constructor() {
         this.clientId = googleAppAuth.id;
         this.secretId = googleAppAuth.secret;
-        console.log("here12341234");
         passport.use(new GoogleStrategy({
                 clientID: this.clientId,
                 clientSecret: this.secretId,
