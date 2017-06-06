@@ -988,7 +988,8 @@ var PostlsitresultComponentComponent = (function () {
             _this.Lname = result.name.familyName;
             _this.Fname = result.name.givenName;
         });
-        console.log("dasfasdf" + this.Fname);
+        console.log("dasfasdf" + this.email);
+        console.log("asdfasdf " + this.userID);
         //var JO = {userID : this.userID, email: this.email, fName: this.Fname, lName: this.Lname};
         console.log(this.JJ);
         rentableService$.postAccountToDb(this.JJ)
