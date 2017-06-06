@@ -997,7 +997,7 @@ var PostlsitresultComponentComponent = (function () {
                 _this.userInfo = result;
                 console.log(_this.userInfo.userID);
             });
-            if (_this.userInfo != null) {
+            if (_this.userInfo.userID == _this.userID) {
                 console.log("found!!!!!");
             }
             else {
