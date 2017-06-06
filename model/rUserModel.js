@@ -21,7 +21,7 @@ class rUserModel {
         this.model = mongooseConnection.model("ruser", this.schema);
     }
     retrieveUserWithID(response, filter) {
-        var query = this.model.findone(filter);
+        var query = this.model.findOne(filter);
         query.exec((err, itemArray) => {
             response.json(itemArray);
         });
