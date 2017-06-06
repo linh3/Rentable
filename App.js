@@ -80,7 +80,7 @@ class App {
             });
         */
         var bodyParser = require('body-parser');
-        router.post('/CreateAccount/Create', this.validateAuth, (req, res) => {
+        router.post('/CreateAccount/Create', (req, res) => {
             console.log("here3");
             res.sendFile(path.join(__dirname + '/index.html'));
             console.log(req.body);
@@ -130,7 +130,7 @@ class App {
                 this.Tasks.retrieveTasksDetails(res, {listId: id});
             });
         */
-        router.get('/Search/:SearchKey/:SearchLocation', this.validateAuth, (req, res) => {
+        router.get('/Search/:SearchKey/:SearchLocation', (req, res) => {
             console.log("asdfasdfasdfasdf");
             var key = req.params.SearchKey;
             var key2 = req.params.SearchLocation;
@@ -142,7 +142,7 @@ class App {
             var id = req.params.userID;
             this.Items.retrieveItemWithKeyword(res, { "userID": id });
         });
-        router.get('/user/:userID', (req, res) => {
+        router.get('/user/:userID', this.validateAuth, (req, res) => {
             console.log("INNNNNNNNNN");
             var id = req.params.userID;
             this.Users.retrieveUserWithID(res, { "userID": id });
