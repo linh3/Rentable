@@ -982,10 +982,13 @@ var PostlsitresultComponentComponent = (function () {
             _this.Lname = result.name.familyName;
             _this.Fname = result.name.givenName;
         });
-        this.JJ.userID = this.userID;
-        this.JJ.email = this.email;
-        this.JJ.fName = this.Fname;
-        this.JJ.lName = this.Lname;
+        console.log(this.userID);
+        console.log(this.email);
+        console.log(this.Fname);
+        /*  this.JJ.userID = this.userID;
+          this.JJ.email = this.email;
+          this.JJ.fName = this.Fname;
+          this.JJ.lName = this.Lname;*/
         //var JO = {userID : this.userID, email: this.email, fName: this.Fname, lName: this.Lname};
         console.log(this.JJ);
         // rentableService$.postAccountToDb(this.JJ)
