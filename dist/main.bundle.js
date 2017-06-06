@@ -978,21 +978,19 @@ var PostlsitresultComponentComponent = (function () {
         this.JJ = { 'userID': 0, 'email': "", 'fName': "", 'lName': "" };
         rentableService$.getUserInfo()
             .subscribe(function (result) {
-            _this.email = result.emails[0].value;
+            _this.JJ.email = result.emails[0].value;
             _this.userID = result.id;
             _this.Lname = result.name.familyName;
             _this.Fname = result.name.givenName;
         });
-        console.log("dasfasdf" + this.email);
-        console.log("asdfasdf " + this.userID);
         this.JJ.userID = this.userID;
-        this.JJ.email = this.email;
+        //this.JJ.email = this.email;
         this.JJ.fName = this.Fname;
         this.JJ.lName = this.Lname;
         //var JO = {userID : this.userID, email: this.email, fName: this.Fname, lName: this.Lname};
         console.log(this.JJ);
-        rentableService$.postAccountToDb(this.JJ)
-            .subscribe(function (result) { });
+        // rentableService$.postAccountToDb(this.JJ)
+        // .subscribe(result => { });
     }
     PostlsitresultComponentComponent.prototype.ngOnInit = function () {
     };
