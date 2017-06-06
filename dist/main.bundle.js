@@ -983,7 +983,6 @@ var PostlsitresultComponentComponent = (function () {
             _this.Lname = result.name.familyName;
             _this.Fname = result.name.givenName;
         }, function () { _this.userID = -1; _this.email = ""; });
-        console.log(this.email);
         /*  this.JJ.userID = this.userID;
           this.JJ.email = this.email;
           this.JJ.fName = this.Fname;
@@ -994,6 +993,7 @@ var PostlsitresultComponentComponent = (function () {
         // .subscribe(result => { });
     }
     PostlsitresultComponentComponent.prototype.ngOnInit = function () {
+        console.log(this.email);
     };
     return PostlsitresultComponentComponent;
 }());
