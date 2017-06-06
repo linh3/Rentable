@@ -785,10 +785,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var PostitemboxComponentComponent = (function () {
     function PostitemboxComponentComponent(rentableService$) {
+        var _this = this;
         this.rentableService$ = rentableService$;
+        this.rentableService$.getUserInfo()
+            .subscribe(function (result) { _this.userID = result.id; });
     }
     PostitemboxComponentComponent.prototype.postItem = function (form) {
-        console.log(form.value);
+        console.log("1 " + form.value);
+        form.userID = this.userID;
+        console.log("2 " + form.value);
         this.rentableService$.postItemToDb(form.value)
             .subscribe(function (result) { });
     };
