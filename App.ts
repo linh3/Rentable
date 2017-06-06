@@ -89,6 +89,7 @@ class App {
         console.log('user object:' + JSON.stringify(req.user));
         res.json(req.user);
     });
+
 /*
     router.get('/auth/facebook', 
         passport.authenticate('facebook', 
@@ -173,6 +174,11 @@ class App {
         console.log('1234123412341Query All list: ' + key);
         this.Items.retrieveItemWithKeyword(res, {"title": {$regex: ".*" + key + ".*", $options:"$i"}, "location": {$regex: ".*" + key2 + ".*", $options:"$i"} });
     });
+
+    router.get('/user/:userID', (req, res) => {
+        var id = req.params.userID;
+        this.Users.retrieveUserWithID(res, {'userID': {id}});
+    });
 
      router.get('*', (req, res) => {
         res.sendFile(__dirname + '/dist/index.html');

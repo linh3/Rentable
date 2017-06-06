@@ -20,5 +20,11 @@ class rUserModel {
     createModel() {
         this.model = mongooseConnection.model("ruser", this.schema);
     }
+    retrieveUserWithID(response, filter) {
+        var query = this.model.find(filter);
+        query.exec((err, itemArray) => {
+            response.json(itemArray);
+        });
+    }
 }
 exports.default = rUserModel;

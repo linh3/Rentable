@@ -37,5 +37,11 @@ export default class rUserModel {
     public createModel(): void {
         this.model = mongooseConnection.model<rUser>("ruser", this.schema);
     }
+    public retrieveUserWithID(response:any, filter:Object) {
+        var query = this.model.find(filter);
+        query.exec( (err, itemArray) => {
+            response.json(itemArray) ;
+        });
+    }
 
 }
