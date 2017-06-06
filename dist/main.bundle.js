@@ -976,7 +976,7 @@ var PostlsitresultComponentComponent = (function () {
         var _this = this;
         this.rentableService$ = rentableService$;
         this._router = _router;
-        this.JJ = { 'email': "" };
+        this.JJ = { 'userID': -1, 'email': "", 'fName': "", 'lName': "" };
         this.rentableService$.getUserInfo()
             .subscribe(function (result) {
             console.log("first " + (_this.email = result.emails[0].value));
@@ -984,8 +984,14 @@ var PostlsitresultComponentComponent = (function () {
             _this.JJ.email = _this.email;
             console.log("third " + _this.JJ.email);
             _this.userID = result.id;
+            _this.JJ.userID = (_this.userID);
+            console.log("uid " + _this.JJ.userID);
             _this.Lname = result.name.familyName;
+            _this.JJ.lName = _this.Lname;
+            console.log("lname: " + _this.JJ.lName);
             _this.Fname = result.name.givenName;
+            _this.JJ.fName = _this.Fname;
+            console.log("fname: " + _this.JJ.fName);
         }, function () { _this.userID = -1; _this.email = ""; });
         /*  this.JJ.userID = this.userID;
           this.JJ.email = this.email;
