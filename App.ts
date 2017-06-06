@@ -117,8 +117,8 @@ class App {
         res.sendFile(path.join(__dirname + '/index.html'));
 
         console.log(req.body);
-        var jsonObj = req.body;
-        jsonObj.userID = this.idGenerator;
+        var jsonObj = req;
+//        jsonObj.userID = this.idGenerator;
         this.Users.model.create([jsonObj], (err) => {
             if (err) {
                 console.log('object creation failed');
@@ -128,7 +128,7 @@ class App {
         this.idGenerator++;
     });
 
-    router.post('/CreateAccount/:userID/:email/:Fname/:Lname',this.validateAuth, (req, res) => {
+    /*router.post('/CreateAccount/:userID/:email/:Fname/:Lname',this.validateAuth, (req, res) => {
         console.log("here3");
         res.sendFile(path.join(__dirname + '/index.html'));
 
@@ -142,7 +142,7 @@ class App {
         res.send(this.idGenerator.toString());
         this.idGenerator++;
     });
-
+*/
     router.post('/PostItem/Post',this.validateAuth, (req, res) => {
         console.log("here444");
         res.sendFile(path.join(__dirname + '/index.html'));
