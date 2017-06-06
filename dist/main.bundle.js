@@ -977,13 +977,10 @@ var PostlsitresultComponentComponent = (function () {
         this._router = _router;
         rentableService$.getUserInfo()
             .subscribe(function (result) {
-            _this.email = result.emails[0].value;
-            _this.JJ.email = _this.email;
-            _this.userID = result.id;
-            _this.JJ.userID = _this.userID;
-            _this.Lname = result.name.familyName;
-            _this.Fname = result.name.givenName;
+            _this.userInfo = result;
         });
+        console.log(this.userInfo);
+        this.JJ.email = this.userInfo.emails[0].value;
         console.log(this.userID);
         console.log(this.email);
         console.log(this.Fname);
