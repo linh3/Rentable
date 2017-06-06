@@ -984,6 +984,7 @@ var PostlsitresultComponentComponent = (function () {
         });
         console.log("dasfasdf" + this.Fname);
         var JO = { userID: this.userID, email: this.email, fName: this.Fname, lName: this.Lname };
+        console.log(JO);
         rentableService$.postAccountToDb(JO)
             .subscribe(function (result) { });
     }
