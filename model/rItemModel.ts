@@ -18,7 +18,7 @@ export default class rItemModel {
         this.schema =  mongoose.Schema(
             {
               //itemID: Number,
-              //userID: Number,
+                userID: Number,
               //reviewID: Number,
               //dateCreated: Date,
                 title: String,
