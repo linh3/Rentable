@@ -140,7 +140,7 @@ class App {
         router.get('/postList/:userID', this.validateAuth, (req, res) => {
             console.log("asdfasdfasdfasdf");
             var id = req.params.userID;
-            this.Items.retrieveItemWithKeyword(res, { "userID": id });
+            //this.Items.retrieveItemWithKeyword(res, {"userID": id });
         });
         router.get('/user/:userID', (req, res) => {
             console.log("INNNNNNNNNN");
