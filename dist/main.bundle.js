@@ -761,7 +761,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/postitempage-component/postitembox-component/postitembox-component.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id = \"PostItem\" class = \"PostItem\">\n    <form #form=\"ngForm\" (ngSubmit) = \"postItem(form)\">\n      Title:<br>\n      <input type=\"text\" name=\"title\" ngModel><br><br>\n      Price:<br>\n      <input type=\"text\" name=\"price\" ngModel><br><br>\n      Condition:<br>\n      <input type=\"text\" name=\"condition\" ngModel><br><br>\n      Description:<br>\n      <input type=\"text\" name=\"description\" ngModel><br><br>\n      Location:<br>\n      <input type=\"text\" name=\"location\" ngModel><br>\n      Image:<br>\n      <input type=\"text\" name=\"image\" ngModel><br>\n      <input [routerLink] = \"['/PostLists']\"type=\"submit\" value=\"Post!\">\n    </form>\n</div>"
+module.exports = "<div id = \"PostItem\" class = \"PostItem\">\n    <form #form=\"ngForm\" (ngSubmit) = \"postItem(form)\">\n      Title:<br>\n      <input type=\"text\" name=\"title\" ngModel><br><br>\n      Price:<br>\n      <input type=\"text\" name=\"price\" ngModel><br><br>\n      Condition:<br>\n      <input type=\"text\" name=\"condition\" ngModel><br><br>\n      Description:<br>\n      <input type=\"text\" name=\"description\" ngModel><br><br>\n      Location:<br>\n      <input type=\"text\" name=\"location\" ngModel><br>\n      Image:<br>\n      <input type=\"text\" name=\"image\" ngModel><br>\n      <input type=\"submit\" value=\"Post!\">\n    </form>\n</div>"
 
 /***/ }),
 
@@ -958,7 +958,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/postlist-component/postlsitresult-component/postlsitresult-component.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id = \"search\" class=\"search\">\n  <h1 class=\"TitleFont\">{{email}}Your Posts...</h1>\n  <h1 class=\"TitleFont\">{{userID}}</h1>  \n  <h1 class=\"TitleFont\">{{Fname}}</h1>  \n  <h1 class=\"TitleFont\">{{Lname}}</h1>  \n  <div *ngIf=\"resultList?.length == 0\">\n    <br><br><br><h1 class=\"TitleFont\">Sorry, You don't have any post</h1><br><br><br>\n  </div>\n  <a [routerLink] = \"['']\" class= \"searchContent\" *ngFor = \"let each of resultList\">\n    <img src=\"{{each.image}}\" class=\"searchImgs\">\n    <div class=\"TitleSubFont\">{{each.title}}</div>\n    <div class=\"ContentFont\">Price: ${{each.price}} per day<br>Location: {{each.location}}<br><br>Description: {{each.description}}</div>\n  </a>\n  <a [routerLink] = \"['/PostItem']\" id=\"PostItemLink\"><li>Add Post</li></a>  \n\n</div>\n"
+module.exports = "<div id = \"search\" class=\"search\">\n  <h1 class=\"TitleFont\">{{email}} Your Posts...</h1>\n  <h1 class=\"TitleFont\">UserID: {{userID}}</h1>  \n\n  <div *ngIf=\"resultList?.length == 0\">\n    <br><br><br><h1 class=\"TitleFont\">Sorry, You don't have any post</h1><br><br><br>\n  </div>\n  <a [routerLink] = \"['']\" class= \"searchContent\" *ngFor = \"let each of resultList\">\n    <img src=\"{{each.image}}\" class=\"searchImgs\">\n    <div class=\"TitleSubFont\">{{each.title}}</div>\n    <div class=\"ContentFont\">Price: ${{each.price}} per day<br>Location: {{each.location}}<br><br>Description: {{each.description}}</div>\n  </a>\n  <a [routerLink] = \"['/PostItem']\" id=\"PostItemLink\"><li>Add Post</li></a>  \n\n</div>\n"
 
 /***/ }),
 
