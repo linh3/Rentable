@@ -1001,10 +1001,11 @@ var PostlsitresultComponentComponent = (function () {
                         .subscribe(function (result) { });
                 }
             });
-            //rentableService$.getPostsFromUser(this.userID)
-            //.subscribe(result => {//this.resultList = result;
-            //console.log(this.resultList);
-            //})
+            rentableService$.getPostsFromUser(_this.userID)
+                .subscribe(function (result) {
+                _this.resultList = result;
+                console.log(_this.resultList);
+            });
         }, function () { _this.userID = ""; _this.email = ""; });
     }
     PostlsitresultComponentComponent.prototype.ngOnInit = function () {
