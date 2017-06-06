@@ -993,7 +993,10 @@ var PostlsitresultComponentComponent = (function () {
             _this.JJ.fName = _this.Fname;
             //console.log("fname: " +this.JJ.fName);
             rentableService$.checkUser(_this.userID)
-                .subscribe(function (result) { _this.userInfo = result; });
+                .subscribe(function (result) {
+                _this.userInfo = result;
+                console.log(_this.userInfo);
+            });
             //rentableService$.postAccountToDb(this.JJ)
             //.subscribe(result => { });
         }, function () { _this.userID = ""; _this.email = ""; });
