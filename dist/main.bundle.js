@@ -995,14 +995,13 @@ var PostlsitresultComponentComponent = (function () {
             rentableService$.checkUser(_this.userID)
                 .subscribe(function (result) {
                 _this.userInfo = result;
-                console.log(_this.userInfo.userID);
+                console.log(_this.userInfo);
             });
-            if (_this.userInfo.userID == _this.userID) {
-                console.log("found!!!!!");
-            }
-            else {
-                console.log("not found!!!!");
-            }
+            /*if(this.userInfo.userID == this.userID){
+              console.log("found!!!!!");
+            }else{
+              console.log("not found!!!!");
+            }*/
             //rentableService$.postAccountToDb(this.JJ)
             //.subscribe(result => { });
         }, function () { _this.userID = ""; _this.email = ""; });
