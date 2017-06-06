@@ -886,7 +886,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/postlist-component/postlist-component.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = Home>\n  <app-header-component></app-header-component>\n  <app-navbar-component></app-navbar-component>\n  <app-postlsitresult-component></app-postlsitresult-component>\n</div>\n\n"
+module.exports = "<div class = Home>\n  <app-header-component></app-header-component>\n  <app-navbar-component></app-navbar-component>\n  <app-hometext-component></app-hometext-component>\n  <app-searchbox-component></app-searchbox-component>\n</div>\n<app-postlsitresult-component></app-postlsitresult-component>\n"
 
 /***/ }),
 
