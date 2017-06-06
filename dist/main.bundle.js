@@ -1004,7 +1004,7 @@ var PostlsitresultComponentComponent = (function () {
             rentableService$.getPostsFromUser(_this.userID)
                 .subscribe(function (result) {
                 _this.resultList = result;
-                console.log(_this.resultList);
+                //console.log(this.resultList);
             });
         }, function () { _this.userID = ""; _this.email = ""; });
     }
