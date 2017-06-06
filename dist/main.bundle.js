@@ -978,21 +978,18 @@ var PostlsitresultComponentComponent = (function () {
         this._router = _router;
         this.rentableService$.getUserInfo()
             .subscribe(function (result) {
-            _this.email = result.emails[0].value;
-            console.log('h ' + _this.email);
+            _this.JJ.email = result.emails[0].value;
+            console.log('h ' + _this.JJ.email);
             _this.userID = result.id;
             _this.Lname = result.name.familyName;
             _this.Fname = result.name.givenName;
         });
-        console.log(this.userID);
-        console.log(this.email);
-        console.log(this.Fname);
         /*  this.JJ.userID = this.userID;
           this.JJ.email = this.email;
           this.JJ.fName = this.Fname;
           this.JJ.lName = this.Lname;*/
         //var JO = {userID : this.userID, email: this.email, fName: this.Fname, lName: this.Lname};
-        console.log(this.JJ);
+        //console.log(this.JJ);
         // rentableService$.postAccountToDb(this.JJ)
         // .subscribe(result => { });
     }
