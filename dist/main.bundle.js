@@ -993,6 +993,8 @@ var PostlsitresultComponentComponent = (function () {
             _this.JJ.fName = _this.Fname;
             console.log("fname: " + _this.JJ.fName);
         }, function () { _this.userID = -1; _this.email = ""; });
+        console.log("fname: " + this.JJ.fName);
+        console.log("final: " + JSON.stringify(this.JJ));
         /*  this.JJ.userID = this.userID;
           this.JJ.email = this.email;
           this.JJ.fName = this.Fname;
