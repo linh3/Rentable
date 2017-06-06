@@ -979,7 +979,7 @@ var PostlsitresultComponentComponent = (function () {
         this.JJ = { 'userID': "", 'email': "", 'fName': "", 'lName': "" };
         this.rentableService$.getUserInfo()
             .subscribe(function (result) {
-            //console.log("first "+ (this.email = result.emails[0].value));
+            _this.email = result.emails[0].value;
             //console.log("second " + this.email);
             _this.JJ.email = _this.email;
             //console.log("third " + this.JJ.email);
@@ -1000,6 +1000,11 @@ var PostlsitresultComponentComponent = (function () {
                     rentableService$.postAccountToDb(_this.JJ)
                         .subscribe(function (result) { });
                 }
+            });
+            rentableService$.getPostsFromUser(_this.userID)
+                .subscribe(function (result) {
+                _this.resultList = result;
+                console.log(_this.resultList);
             });
         }, function () { _this.userID = ""; _this.email = ""; });
     }
@@ -1057,6 +1062,10 @@ var RentableApiService = (function () {
     };
     RentableApiService.prototype.getSearchingResult = function (url) {
         return this.http.get(url)
+            .map(function (response) { return response.json(); });
+    };
+    RentableApiService.prototype.getPostsFromUser = function (userID) {
+        return this.http.get("/postLists/" + userID)
             .map(function (response) { return response.json(); });
     };
     RentableApiService.prototype.postAccountToDb = function (body) {

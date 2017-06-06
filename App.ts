@@ -175,6 +175,12 @@ class App {
         this.Items.retrieveItemWithKeyword(res, {"title": {$regex: ".*" + key + ".*", $options:"$i"}, "location": {$regex: ".*" + key2 + ".*", $options:"$i"} });
     });
 
+    router.get('/postList/:userID',this.validateAuth, (req, res) => {
+        console.log("asdfasdfasdfasdf");
+        var id = req.params.userID;
+        this.Items.retrieveItemWithKeyword(res, {"userID": id });
+    });
+
     router.get('/user/:userID', (req, res) => {
         console.log("INNNNNNNNNN");
         var id = req.params.userID;
