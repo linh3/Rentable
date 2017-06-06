@@ -992,11 +992,13 @@ var PostlsitresultComponentComponent = (function () {
             _this.Fname = result.name.givenName;
             _this.JJ.fName = _this.Fname;
             //console.log("fname: " +this.JJ.fName);
-            /*rentableService$.checkUser(this.userID)
-            .subscribe(result => {this.userInfo = result
-            console.log(this.userInfo)});*/
-            rentableService$.postAccountToDb(_this.JJ)
-                .subscribe(function (result) { });
+            rentableService$.checkUser(_this.userID)
+                .subscribe(function (result) {
+                _this.userInfo = result;
+                console.log(_this.userInfo);
+            });
+            //rentableService$.postAccountToDb(this.JJ)
+            //.subscribe(result => { });
         }, function () { _this.userID = ""; _this.email = ""; });
     }
     PostlsitresultComponentComponent.prototype.ngOnInit = function () {
