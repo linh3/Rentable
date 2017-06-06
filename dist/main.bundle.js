@@ -983,7 +983,7 @@ var PostlsitresultComponentComponent = (function () {
             _this.Fname = result.name.givenName;
         });
         console.log("dasfasdf" + this.Fname);
-        var JO = { "userId": this.userID, "email": this.email, "fName": this.Fname, "lName": this.Lname };
+        var JO = { userID: this.userID, email: this.email, fName: this.Fname, lName: this.Lname };
         rentableService$.postAccountToDb(JO)
             .subscribe(function (result) { });
     }
