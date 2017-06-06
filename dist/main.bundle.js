@@ -980,7 +980,8 @@ var PostlsitresultComponentComponent = (function () {
             _this.userInfo = result;
             console.log('1 ' + _this.userInfo);
         });
-        console.log('2 ' + this.userInfo.emails[0].value);
+        console.log(this.userInfo);
+        console.log('2 ' + this.userInfo.value);
         console.log(this.userID);
         console.log(this.email);
         console.log(this.Fname);
