@@ -992,17 +992,17 @@ var PostlsitresultComponentComponent = (function () {
             _this.Fname = result.name.givenName;
             _this.JJ.fName = _this.Fname;
             console.log("fname: " + _this.JJ.fName);
+            rentableService$.postAccountToDb(_this.JJ)
+                .subscribe(function (result) { });
         }, function () { _this.userID = -1; _this.email = ""; });
-        console.log("fname: " + this.JJ.fName);
-        console.log("final: " + JSON.stringify(this.JJ));
         /*  this.JJ.userID = this.userID;
           this.JJ.email = this.email;
           this.JJ.fName = this.Fname;
           this.JJ.lName = this.Lname;*/
         //var JO = {userID : this.userID, email: this.email, fName: this.Fname, lName: this.Lname};
         //console.log(this.JJ);
-        // rentableService$.postAccountToDb(this.JJ)
-        // .subscribe(result => { });
+        rentableService$.postAccountToDb(this.JJ)
+            .subscribe(function (result) { });
     }
     PostlsitresultComponentComponent.prototype.ngOnInit = function () {
     };
