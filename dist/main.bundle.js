@@ -975,17 +975,22 @@ var PostlsitresultComponentComponent = (function () {
     function PostlsitresultComponentComponent(rentableService$, _router) {
         var _this = this;
         this._router = _router;
+        this.JJ = { userID: "0", email: "", fName: "", lName: "" };
         rentableService$.getUserInfo()
             .subscribe(function (result) {
             _this.email = result.emails[0].value;
+            _this.JJ.email = result.emails[0].value;
             _this.userID = result.id;
+            _this.JJ.userID = result.id;
+            _this.JJ.lName = result.name.familyName;
+            _this.JJ.fName = result.name.givenName;
             _this.Lname = result.name.familyName;
             _this.Fname = result.name.givenName;
         });
         console.log("dasfasdf" + this.Fname);
-        var JO = { userID: this.userID, email: this.email, fName: this.Fname, lName: this.Lname };
-        console.log(JO);
-        rentableService$.postAccountToDb(JO)
+        //var JO = {userID : this.userID, email: this.email, fName: this.Fname, lName: this.Lname};
+        console.log(this.JJ);
+        rentableService$.postAccountToDb(this.JJ)
             .subscribe(function (result) { });
     }
     PostlsitresultComponentComponent.prototype.ngOnInit = function () {
