@@ -978,11 +978,13 @@ var PostlsitresultComponentComponent = (function () {
         this._router = _router;
         this.rentableService$.getUserInfo()
             .subscribe(function (result) {
-            _this.JJ.email = result.emails[0].value;
-            console.log('h ' + _this.JJ.email);
-            _this.userID = result.id;
-            _this.Lname = result.name.familyName;
-            _this.Fname = result.name.givenName;
+            _this.userInfo = JSON.stringify(result);
+            console.log(_this.userInfo);
+            /*this.JJ.email = result.emails[0].value;
+            console.log('h '+this.JJ.email);
+            this.userID = result.id;
+            this.Lname = result.name.familyName;
+            this.Fname = result.name.givenName;*/
         });
         /*  this.JJ.userID = this.userID;
           this.JJ.email = this.email;
