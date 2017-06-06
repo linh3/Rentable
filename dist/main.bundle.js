@@ -978,8 +978,9 @@ var PostlsitresultComponentComponent = (function () {
         rentableService$.getUserInfo()
             .subscribe(function (result) {
             _this.email = result.emails[0].value;
-            console.log(_this.email);
+            _this.JJ.email = _this.email;
             _this.userID = result.id;
+            _this.JJ.userID = _this.userID;
             _this.Lname = result.name.familyName;
             _this.Fname = result.name.givenName;
         });
