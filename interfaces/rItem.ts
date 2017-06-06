@@ -2,7 +2,7 @@ import Mongoose = require("mongoose");
 
 interface rItem extends Mongoose.Document {
  //   itemID: number;
-    //userID: number;
+    userID: number;
  //   reviewID: number;
  //   dateCreated: Date;
     title: string;
