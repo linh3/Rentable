@@ -16,7 +16,7 @@ describe('Test Search Item Results', function () {
 		 
     //GET TEST
     before(function (done) {
-        chai.request("http://localhost:8080")
+        chai.request("http://rentableappsu.azurewebsites.net")
 			.get("/Search/bicycle/Seattle")
 			.end(function (err, res) {
 				requestResult = res.body;
@@ -55,3 +55,32 @@ describe('Test Search Item Results', function () {
 			});
 	    });
     });
+
+    describe('Test Create Account', function () {
+    var requestResult;
+	var response;
+
+    //POST TEST
+    it('Get an object of a single user account that was created',() => {
+        let account = {
+            userID: 0, 
+            fName: 'Crystal',
+            lName: 'Nguyen',
+            email: 'crystalnguyen@msn.com',
+            password: 'Youtube88!'
+        }
+        chai.request('http://rentableappsu.azurewebsites.net/')
+        .post('/CreateAccount/Create')
+        .send(account)
+        .end((err, res) => {
+            res.body.should.be.a('object');
+            res.body.should.have.property('userID').eql(0);
+            res.body.should.have.property('fName').eql("Crystal");
+            res.body.should.have.property('lName').eql("Nguyen");
+            res.body.should.have.property('email').eql("crystalnguyen@msn.com");
+            res.body.should.have.property('password').eql("Youtube88!");
+            res.body.password.should.have.property("Youtube88!");           
+            done();
+        });
+    });
+});
