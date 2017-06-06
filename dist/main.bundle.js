@@ -996,6 +996,12 @@ var PostlsitresultComponentComponent = (function () {
                 .subscribe(function (result) {
                 _this.userInfo = result;
                 console.log(_this.userInfo);
+                if (_this.userInfo != null) {
+                    console.log("found");
+                }
+                else {
+                    console.log("not found");
+                }
             });
             //rentableService$.postAccountToDb(this.JJ)
             //.subscribe(result => { });
