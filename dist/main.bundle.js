@@ -978,7 +978,8 @@ var PostlsitresultComponentComponent = (function () {
         this._router = _router;
         this.rentableService$.getUserInfo()
             .subscribe(function (result) {
-            _this.email = result.emails[0].value;
+            console.log("first " + (_this.email = result.emails[0].value));
+            console.log("second " + _this.email);
             _this.userID = result.id;
             _this.Lname = result.name.familyName;
             _this.Fname = result.name.givenName;
@@ -993,7 +994,6 @@ var PostlsitresultComponentComponent = (function () {
         // .subscribe(result => { });
     }
     PostlsitresultComponentComponent.prototype.ngOnInit = function () {
-        console.log(this.email);
     };
     return PostlsitresultComponentComponent;
 }());
