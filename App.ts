@@ -176,8 +176,9 @@ class App {
     });
 
     router.get('/user/:userID', (req, res) => {
+        console.log("INNNNNNNNNN");
         var id = req.params.userID;
-        this.Users.retrieveUserWithID(res, {'userID': {id}});
+        this.Users.retrieveUserWithID(res, {"userID": {id}});
     });
 
      router.get('*', (req, res) => {

@@ -138,8 +138,9 @@ class App {
             this.Items.retrieveItemWithKeyword(res, { "title": { $regex: ".*" + key + ".*", $options: "$i" }, "location": { $regex: ".*" + key2 + ".*", $options: "$i" } });
         });
         router.get('/user/:userID', (req, res) => {
+            console.log("INNNNNNNNNN");
             var id = req.params.userID;
-            this.Users.retrieveUserWithID(res, { 'userID': { id } });
+            this.Users.retrieveUserWithID(res, { "userID": { id } });
         });
         router.get('*', (req, res) => {
             res.sendFile(__dirname + '/dist/index.html');
