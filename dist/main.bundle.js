@@ -975,16 +975,15 @@ var PostlsitresultComponentComponent = (function () {
     function PostlsitresultComponentComponent(rentableService$, _router) {
         var _this = this;
         this._router = _router;
-        this.JJ = { 'userID': 0, 'email': "", 'fName': "", 'lName': "" };
         rentableService$.getUserInfo()
             .subscribe(function (result) {
-            _this.JJ.email = result.emails[0].value;
+            _this.email = result.emails[0].value;
             _this.userID = result.id;
             _this.Lname = result.name.familyName;
             _this.Fname = result.name.givenName;
         });
         this.JJ.userID = this.userID;
-        //this.JJ.email = this.email;
+        this.JJ.email = this.email;
         this.JJ.fName = this.Fname;
         this.JJ.lName = this.Lname;
         //var JO = {userID : this.userID, email: this.email, fName: this.Fname, lName: this.Lname};
