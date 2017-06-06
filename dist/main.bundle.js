@@ -980,6 +980,7 @@ var PostlsitresultComponentComponent = (function () {
             .subscribe(function (result) {
             _this.userInfo = JSON.stringify(result);
             console.log(_this.userInfo);
+            console.log(_this.userInfo.emails[0].value);
             /*this.JJ.email = result.emails[0].value;
             console.log('h '+this.JJ.email);
             this.userID = result.id;
